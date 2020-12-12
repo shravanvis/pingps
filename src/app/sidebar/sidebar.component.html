@@ -1,0 +1,631 @@
+<div class="sidebar">
+
+
+    <div class="sidebartrapezoid"
+      (click)="openleft()">
+      <button>
+        <i class="fa fa-chevron-up" style="margin-left: 7px;" aria-hidden="true"></i>
+      </button>
+    </div>
+    <!-- <div
+      style="float: right; transform: rotate(90deg); margin-right: -41px; margin-top: 200px; background-color: white; border-top-left-radius: 50px; border-top-right-radius: 50px;"
+      (click)="openleft()">
+      <button mat-icon-button>
+        
+        <img src="../../assets/drop-up-arrow.svg" style="width: 10px;" alt="">
+      </button>
+    </div> -->
+    
+    <div *ngIf="leftside" style="">
+      <div *ngIf="sideObjects" class="row" style="background-color: #eee; margin: auto; height: 35px; font-size: 12px; text-align: center;">
+        <div class="col" [class.active1]="objects" (click)="showObjects()" style="height: 35px; padding-top: 5px;">
+          <p>Objects</p>
+        </div>
+        <div class="col" [class.active1]="events" (click)="showevents()" style="height: 35px; padding-top: 5px;">
+          <p>Events</p>
+        </div>
+        <div class="col" [class.active1]="history" (click)="showhistory()" style="height: 35px; padding-top: 5px;">
+          <p>History</p>
+        </div>
+      </div>
+  
+      <div *ngIf="objects" style="height: 100%; width: 100%; background-color: white;">
+  
+        <div>
+          <div style="text-align: center; display: flex;">
+            <div class="input-group" style="margin: 10px 5px 10px 8px; width: 150px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="height: 22px; width: 10px; background-color:  rgb(245, 245, 245);">
+                  <i class="fa fa-search" aria-hidden="true" style="margin-left: -5px; font-size: 12px;"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control search-input" placeholder="Search" style="height: 22px; font-size: 12px;">
+            </div>
+    
+            <button class="button_class">
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+            </button>
+    
+            <button class="button_class">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </button>
+    
+            <button class="button_class">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+    
+            <button class="button_class">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
+          </div>
+    
+          <div class="list-group checkbox-list-group" class="list" style="overflow-y: auto; height: 515px;">
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                    <mat-menu #beforeMenu="matMenu">
+                      <button mat-menu-item style="padding-left: 5px; height: 30px; border-bottom: solid 1px lightgrey; margin-top: -10px; border-top: solid 5px #26a3c5;">
+                        <div style="margin-top: -11px; font-size: 10px;">
+                          <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                          <span>Show History</span>
+                        </div>
+                      </button>
+                      <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                        <div style="margin-top: -13px; font-size: 10px;">
+                          <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                          <span>Follow</span>
+                        </div>
+                      </button>
+                      <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                        <div style="margin-top: -13px; font-size: 10px;">
+                          <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                          <span>Share</span>
+                        </div>
+                      </button>
+                      <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                        <div style="margin-top: -13px; font-size: 10px;">
+                          <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                          <span>Edit</span>
+                        </div>
+                      </button>
+                      <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                        <div style="margin-top: -13px; font-size: 10px;">
+                          <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                          <span>Report</span>
+                        </div>
+                      </button>
+                    </mat-menu>
+  
+  
+                    <!-- <div ngbDropdown class="d-inline-block">
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>Action - 1</button>
+                        <button ngbDropdownItem>Another Action</button>
+                        <button ngbDropdownItem>Something else is here</button>
+                      </div>
+                    </div> -->
+  
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;">
+                <div class="col-2" style="padding-top: 10px;">
+                  <div style="display: flex;">
+                    <input class="checkbox" type="checkbox" style="margin-right: 5px;">
+                    <input class="checkbox" type="checkbox">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p style="margin: 0;">BMW M5</p>
+                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                </div>
+                <div class="col">
+                  <div style="display: flex; float: right; position: relative; padding-top: 5px;">
+                    <p>0kph</p> &nbsp; &nbsp;
+                    <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div *ngIf="events" style="height: 100%; width: 100%; background-color: white;">
+        <div style="text-align: center; display: flex;">
+  
+          <div class="input-group" style="margin: 10px 5px 10px 8px; width: 150px;">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="height: 22px; width: 10px; background-color:  rgb(245, 245, 245);"><i class="fa fa-search" aria-hidden="true" style="margin-left: -5px; font-size: 12px;"></i></span>
+            </div>
+            <input type="text" class="form-control search-input" placeholder="Search" style="height: 22px; font-size: 12px;">
+          </div>
+  
+          <button class="button_class">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+          </button>
+  
+          <button class="button_class">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
+          </button>
+  
+          <button class="button_class">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+  
+          <button class="button_class">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+        </div>        
+        <div class="table-responsive">
+          <table class="table table-hover event-table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Object</th>
+                <th scope="col">Event</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>01:16:36</td>
+                <td>Car</td>
+                <td>Zone in (Coventry)</td>
+              </tr>
+              <tr>
+                <td>01:19:43</td>
+                <td>Car</td>
+                <td>Zone in (Coventry)</td>
+              </tr>
+              <tr>
+                <td>01:53:18</td>
+                <td>Car</td>
+                <td>Zone in (Stafford)</td>
+              </tr>
+              <tr>
+                <td>01:57:13</td>
+                <td>Car</td>
+                <td>Zone in (Stafford)</td>
+              </tr>
+              <tr>
+                <td>03:12:24</td>
+                <td>Car</td>
+                <td>Zone in (Preston)</td>
+              </tr>
+              <tr>
+                <td>04:10:58</td>
+                <td>Car</td>
+                <td>Zone in (Preston)</td>
+              </tr>
+              <tr>
+                <td>01:16:36</td>
+                <td>Car</td>
+                <td>Zone in (Coventry)</td>
+              </tr>
+              <tr>
+                <td>01:19:43</td>
+                <td>Car</td>
+                <td>Zone in (Coventry)</td>
+              </tr>
+              <tr>
+                <td>01:53:18</td>
+                <td>Car</td>
+                <td>Zone in (Stafford)</td>
+              </tr>
+              <tr>
+                <td>01:57:13</td>
+                <td>Car</td>
+                <td>Zone in (Stafford)</td>
+              </tr>
+              <tr>
+                <td>03:12:24</td>
+                <td>Car</td>
+                <td>Zone in (Preston)</td>
+              </tr>
+              <tr>
+                <td>04:10:58</td>
+                <td>Car</td>
+                <td>Zone in (Preston)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  
+      <div *ngIf="history" style="height: 100%; width: 100%; background-color: white;">
+        <div class="container" style="height: 500px; margin: 10px 10px 10px 0px;">
+          <div class="row">
+            <div class="col-3">
+              <p style="font-size: 13px; margin-top: 5px;">Devices:</p>
+            </div>
+            <div class="col-sm">
+              <select class="device-select" style="width: 100%; height: 30px; font-size: 13px; border: none; background-color: rgb(247, 247, 247);">
+                <option value="">first</option>
+                <option value="">first</option>
+                <option value="">first</option>
+                <option value="">first</option>
+                <option value="">first</option>
+              </select>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-3">
+              <p style="font-size: 13px; margin-top: 5px;">From:</p>
+            </div>
+            <div class="col-sm">
+              <div style="display: flex;">
+                <input type="date" placeholder="2020-11-10" style="width: 65%; height: 30px; font-size: 13px; border: none; background-color: rgb(247, 247, 247); margin: 0px 10px 0px 0px;">
+                <select style="width: 100%; height: 30px; font-size: 13px; border: none; background-color: rgb(247, 247, 247);">
+                  <option value="">00:00</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-3">
+              <p style="font-size: 13px; margin-top: 5px;">To:</p>
+            </div>
+            <div class="col-sm">
+              <div style="display: flex;">
+                <input type="date" placeholder="2020-11-10" style="width: 65%; height: 30px; font-size: 13px; border: none; background-color: rgb(247, 247, 247); margin: 0px 10px 0px 0px;">
+                <select style="width: 100%; height: 30px; font-size: 13px; border: none; background-color: rgb(247, 247, 247);">
+                  <option value="">00:00</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-8">
+              <button style="width: 100%; height: 30px; background-color: #26a3c5; color: white; border: none;">
+              Show history</button>
+            </div>
+            <div class="col">
+              <div style="display: flex;">
+                <button style="width: 100%; height: 30px; background-color: #26a3c5; color: white; border: none;">
+                  <i class="fa fa-download" aria-hidden="true"></i>
+                </button> &nbsp;
+                <button style="width: 100%; height: 30px; background-color: #26a3c5; color: white; border: none;">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

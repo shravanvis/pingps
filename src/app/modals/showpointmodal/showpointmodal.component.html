@@ -1,0 +1,30 @@
+<mat-toolbar style="width: 100%; height: 40px; display: inline-block; background-color: #26a3c5; color: white; margin-bottom: 10px;">
+    <i class="fa fa-map" aria-hidden="true" style="margin: 10px 5px 0px 0px;"></i>
+    <p style="font-size: 15px; display: inline-block; font-weight: 500;">Show point</p>
+    <button mat-dialog-close style="border: none; display: inline-block; background-color: transparent; color: white; float: right;">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+</mat-toolbar>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-3 text">Latitude</div>
+        <div class="col-sm">
+            <input type="text" class="form-control" placeholder="search here">
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-3 text">Longitude</div>
+        <div class="col-sm">
+            <input type="text" class="form-control" placeholder="search here">
+        </div>
+    </div>
+    <div style="float: left; padding: 20px;">
+        <button class="btn btn-outline-info ">Save</button>
+        <button mat-dialog-close class="btn btn-outline-light" style="color: black;">Cancel</button>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+<mat-toolbar style="width: 100%; height: 40px; display: inline-block; background-color: #26a3c5; color: white; margin-bottom: 10px;">
+    <i class="fa fa-tachometer" aria-hidden="true" style="margin: 10px 5px 0px 0px;"></i>
+    <p style="font-size: 15px; display: inline-block; font-weight: 500;">Dashboard</p>
+    <button mat-dialog-close style="border: none; display: inline-block; background-color: transparent; color: white; float: right;">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+    <ng-content></ng-content>
+</mat-toolbar>
+
+<!-- <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <mat-card></mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card></mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card></mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card></mat-card>
+    </mat-grid-tile>
+  </mat-grid-list> -->
+
+  <div style="padding: 10px 20px 10px 20px;">
+<div class="row">
+    <div class="col-sm" style="border-radius: 10px; border: 0;">
+        <nav class="navbar navbar-light bg-light" style="margin: 0%;">
+            <span style="font-size: 10px;">Objects</span>
+            <span style="font-size: 10px;" [matMenuTriggerFor]="beforeMenu"><img src="../../assets/show-more-button-with-three-dots.svg"
+                    style="width: 10px;" alt=""></span>
+
+        </nav>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <ul class="list-group list-group-flush" style="font-size: 10px; margin-top: -5px;">
+                <li class="list-group-item list-group-item-action" style="padding: 5px;"> <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp; Percentage</li>
+                <li class="list-group-item list-group-item-action" style="padding: 5px;"> <i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp; Number</li>
+              </ul>
+          </mat-menu>
+
+        <div style="display: block;">
+            <canvas baseChart style="height: 200px;" [data]="pieChartData1" [labels]="pieChartLabels1"
+                [chartType]="pieChartType1" [colors]="chartColors" [labels]="pieChartLabels" [legend]="false"></canvas>
+        </div>
+
+    </div>
+    <div class="col-sm" style="border-radius: 10px; border: 0;">
+        <nav class="navbar navbar-light bg-light" style="margin: 0%;">
+            <span style="font-size: 10px;">Events (today)</span>
+            <span style="font-size: 10px;" [matMenuTriggerFor]="beforeMenu"><img src="../../assets/show-more-button-with-three-dots.svg"
+                style="width: 10px;" alt=""></span>
+        </nav>
+
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <ul class="list-group list-group-flush" style="font-size: 10px; margin-top: -5px;">
+                <li class="list-group-item list-group-item-action" style="padding: 5px;"> <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp; Today</li>
+                <li class="list-group-item list-group-item-action" style="padding: 5px;"> <i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp; This week</li>
+                <li class="list-group-item list-group-item-action" style="padding: 5px;"> <i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp; This Month</li>
+              </ul>
+          </mat-menu>
+
+        <div style="display: block;">
+            <canvas baseChart style="height: 200px;" [data]="pieChartData2" [labels]="pieChartLabels2"
+                [chartType]="pieChartType2" [colors]="chartColors" [labels]="pieChartLabels" [legend]="false"></canvas>
+        </div>
+    </div>
+    <div class="col-sm" style="border-radius: 10px; border: 0;">
+        <nav class="navbar navbar-light bg-light" style="margin: 0%;">
+            <span style="font-size: 10px;">Maintenance</span>
+            <span style="font-size: 10px;"><img src="../../assets/show-more-button-with-three-dots.svg"
+                    style="width: 10px;" alt=""></span>
+        </nav>
+        <p style="font-size: 15px; color: lightgrey; text-align: center;">No data has been collected
+            yet.</p>
+    </div>
+    <div class="col-sm" style="border-radius: 10px; border: 0;">
+        <nav class="navbar navbar-light bg-light" style="margin: 0%;">
+            <span style="font-size: 10px;">Tasks (today)</span>
+            <span style="font-size: 10px;"><img src="../../assets/show-more-button-with-three-dots.svg"
+                    style="width: 10px;" alt=""></span>
+        </nav>
+        <p style="font-size: 15px; color: lightgrey; text-align: center;">No data has been collected
+            yet.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm" style="border-radius: 10px; border: 0;">
+        <nav class="navbar navbar-light bg-light" style="margin: 0%;">
+            <span style="font-size: 10px;">Mileage (km)</span>
+            <span style="font-size: 10px;"><img src="../../assets/show-more-button-with-three-dots.svg"
+                    style="width: 10px;" alt=""></span>
+        </nav>
+        <div>
+            <div style="display: block">
+              <canvas baseChart
+                      [datasets]="barChartData"
+                      [labels]="barChartLabels"
+                      [options]="barChartOptions"
+                      [legend]="barChartLegend"
+                      [chartType]="barChartType" [colors]="chartColors" [labels]="pieChartLabels" [legend]="false">
+              </canvas>
+            </div>
+          </div>
+    </div>
+    <div class="col-sm"></div>
+</div>
+</div>

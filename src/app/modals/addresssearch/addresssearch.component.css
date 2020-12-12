@@ -1,0 +1,12 @@
+button{
+    outline: none;
+}
+
+.container_div{
+    float: left; padding: 10px;
+}
+
+.cancel{
+    color: black;
+    margin-left: 10px;
+}

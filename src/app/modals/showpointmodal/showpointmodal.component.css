@@ -1,0 +1,17 @@
+.form-control{
+    height: 25px;
+}
+
+.text{
+    font-size: 15px; margin-top: 2px;
+}
+
+.btn{
+    padding: 2px;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+button{
+    outline: none;
+}

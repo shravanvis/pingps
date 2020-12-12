@@ -1,0 +1,19 @@
+.trapezoid {
+    border-bottom: 18px solid white;
+	border-left: 18px solid transparent;
+	border-right: 22px solid transparent;
+	height: 0;
+    width: 80px;
+    margin: auto;
+    text-align: center;
+    margin-top: -20px;
+    margin-right: 50px;
+  }
+
+  .bottomlist{
+    padding: 5px;
+}
+
+button{
+    outline: none;
+}

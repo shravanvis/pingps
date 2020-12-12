@@ -1,0 +1,168 @@
+<mat-toolbar style="width: 100%; height: 40px; display: inline-block; background-color: #26a3c5; color: white;">
+    <i class="fa fa-signal" aria-hidden="true" style="margin: 10px 5px 0px 0px;"></i>
+    <p style="font-size: 15px; display: inline-block; font-weight: 500;">Reports</p>
+    <button mat-dialog-close style="border: none; display: inline-block; background-color: transparent; color: white; float: right;">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+</mat-toolbar>
+
+<div>
+    <div class="heading" style="">
+        <div class="row" style="">
+            <div class="header" [class.active1]="Reports" (click)="show_reports()">Reports</div>
+            <div class="header" [class.active1]="Generated" (click)="show_generated()">Generated</div>
+        </div>
+    </div>
+
+    <div *ngIf="Reports" style="margin: 10px;">
+        <table class="table">
+            <thead>
+              <tr>
+                <td scope="col">Name</td>
+                <td scope="col">Type</td>
+                <td scope="col">Format</td>
+                <td scope="col">Objects</td>
+                <td scope="col">Zones</td>
+                <td scope="col">Sensors</td>
+                <td scope="col">Daily</td>
+                <td scope="col">Weekly</td>
+                <td scope="col">Actions</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td scope="row">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>
+                    <div style="font-size: 10px;">
+                        <i class="fa fa-cogs" aria-hidden="true" title="generate" [matMenuTriggerFor]="beforeMenu"></i> &nbsp;
+                        <i class="fa fa-pencil" aria-hidden="true" title="edit"></i> &nbsp;
+                        <i class="fa fa-trash" aria-hidden="true" title="delete"></i>
+                    </div>
+
+                    <mat-menu #beforeMenu="matMenu">
+                        <button mat-menu-item style="padding-left: 5px; height: 30px; border-bottom: solid 1px lightgrey; margin-top: -10px; border-top: solid 5px #26a3c5;">
+                          <div style="margin-top: -11px; font-size: 10px;">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                            <span>Last hour</span>
+                          </div>
+                        </button>
+                        <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                          <div style="margin-top: -13px; font-size: 10px;">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                            <span>Today</span>
+                          </div>
+                        </button>
+                        <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                          <div style="margin-top: -13px; font-size: 10px;">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                            <span>Yesterday</span>
+                          </div>
+                        </button>
+                        <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                          <div style="margin-top: -13px; font-size: 10px;">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                            <span>Before 2 days</span>
+                          </div>
+                        </button>
+                        <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                          <div style="margin-top: -13px; font-size: 10px;">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                            <span>Before 3 days</span>
+                          </div>
+                        </button>
+                        <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                          <div style="margin-top: -13px; font-size: 10px;">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                            <span>This week</span>
+                          </div>
+                        </button>
+                        <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                          <div style="margin-top: -13px; font-size: 10px;">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                            <span>Last week</span>
+                          </div>
+                        </button>
+                        <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                          <div style="margin-top: -13px; font-size: 10px;">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                            <span>This month</span>
+                          </div>
+                        </button>
+                        <button mat-menu-item style="padding-left: 5px; height: 25px; border-bottom: solid 1px lightgrey;">
+                          <div style="margin-top: -13px; font-size: 10px;">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i> &nbsp;
+                            <span>Last month</span>
+                          </div>
+                        </button>
+                      </mat-menu>
+
+                </td>
+              </tr>
+              <tr>
+                <td scope="row">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td scope="row">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Otto</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div *ngIf="Generated" style="margin: 10px;">
+        <table class="table">
+            <thead>
+              <tr>
+                <td scope="col">Time</td>
+                <td scope="col">Name</td>
+                <td scope="col">Type</td>
+                <td scope="col">Format</td>
+                <td scope="col">Objects</td>
+                <td scope="col">Zones</td>
+                <td scope="col">Sensors</td>
+                <td scope="col">Schedule</td>
+                <td scope="col">Actions</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td scope="row">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>
+                  <div style="font-size: 10px;">
+                    <i class="fa fa-file" aria-hidden="true" title="open"></i> &nbsp;
+                    <i class="fa fa-trash" aria-hidden="true" title="delete"></i>
+                </div>
+                </td>
+              </tr>
+              <tr>
+                <td scope="row">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td scope="row">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Otto</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

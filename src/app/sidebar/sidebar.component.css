@@ -1,0 +1,116 @@
+.checkbox{
+    zoom: 1.2;
+}
+
+.list::-webkit-scrollbar {
+    width: 5px;
+    background: transparent; /* Chrome/Safari/Webkit */
+}
+
+button {
+    /* Remove focus around button */
+    outline:none;  
+}
+
+.active1{
+    border-bottom: solid 4px #1b99bd;
+    background-color: white;
+}
+
+.button_class{
+    height: 22px;
+    width: 30px;
+    background-color: rgb(245, 245, 245);
+    border: none;
+    margin-top: 10px;
+    padding: 0%;
+    /* font-size: 15px; */
+    border-radius: 2px;
+ }
+
+ .button_class:hover{
+     background-color: lightgrey;
+ }
+
+ .focus:hover{
+     background-color: blue;
+ }
+
+ .sidebar{
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0%;
+    float: right;
+    background-color: white;
+    font-size: 12px;
+    height: 600px;
+ }
+
+ .event-table th {
+    font-size: 12px;
+    white-space: nowrap
+}
+
+.event-table td {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.trapezoid {
+    border-bottom: 18px solid white;
+	border-left: 18px solid transparent;
+	border-right: 22px solid transparent;
+	height: 0;
+    width: 80px;
+    margin: auto;
+    text-align: center;
+    margin-top: -20px;
+    margin-right: 50px;
+  }
+
+  .sidebartrapezoid{
+    border-bottom: 18px solid white;
+	border-left: 18px solid transparent;
+	border-right: 22px solid transparent;
+	height: 0;
+    width: 80px;
+    transform: rotate(90deg);
+    margin-left: 89.5%;
+    margin-left: -30px;
+    margin-right: -50px;
+    margin-top: 200px;
+    float: right;
+    /* position: absolute; */
+    /* z-index: 1; */
+    /* display: block; */
+    /* text-align: justify; */
+  }
+
+  .sidebartrapezoid button{
+    border: none; background-color: transparent; 
+  }
+
+  .table-responsive{
+    max-height:400px;
+    scrollbar-width: thin;
+    scrollbar-color: #009DA0 #f8f9fa;
+}
+
+.table-responsive::-webkit-scrollbar {
+    width: 0.5px;
+  }
+
+  .table-responsive::-webkit-scrollbar-track {
+    background: #f8f9fa;
+  }
+
+  .table-responsive::-webkit-scrollbar-thumb {
+    background-color: #009DA0;
+    border-radius: 10px;
+    border: 6px solid #f8f9fa;
+  }
+
+  button{
+      outline: none;
+  }

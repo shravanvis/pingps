@@ -1,0 +1,134 @@
+<div
+style="width:fit-content; height:fit-content; background-color: white; color: black;
+ bottom: 0%; position: absolute; z-index: 2; right: 0; border: solid 1px black;
+  font-size: 10px; padding: 0px !important;">
+
+<div class="trapezoid"
+  (click)="openbottom()">
+  <button style="border: none; background-color: transparent;">
+    <!-- <mat-icon>touch_app</mat-icon> -->
+    <i class="fa fa-chevron-{{arrow}}" aria-hidden="true"></i>
+  </button>
+</div>
+
+<div *ngIf="showBottom">
+
+  <!-- <div class="trapezoid"></div> -->
+
+
+  <div style="display: flex; overflow-x: auto;">
+    <div style="border-right: solid 1px #d9d9d9; width: 400px;">
+      <li class="list-group-item" style="background-color: #f9f9f9; padding: 10px;">
+        <div class="row">
+          <div class="col-sm">BMW M5</div>
+          <div class="col-sm">Engine</div>
+        </div>
+      </li>
+      <ul class="list-group list-group-flush" style="padding: 10px;">
+        <li class="list-group-item bottomlist">
+          <div class="row">
+            <div class="col-sm">Address:</div>
+            <div class="col-sm">Av. Cuahutemoc, Nueva San</div>
+          </div>
+        </li>
+        <li class="list-group-item bottomlist">
+          <div class="row">
+            <div class="col-sm">Time:</div>
+            <div class="col-sm">2020-10-09 08:44:51</div>
+          </div>
+        </li>
+        <li class="list-group-item bottomlist">
+          <div class="row">
+            <div class="col-sm">Stop duration:</div>
+            <div class="col-sm">0h</div>
+          </div>
+        </li>
+        <li class="list-group-item bottomlist">
+          <div class="row">
+            <div class="col-sm">Driver:</div>
+            <div class="col-sm">-</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div style="border-right: solid 1px #d9d9d9;">
+      <li class="list-group-item" style="background-color: #f9f9f9; padding: 10px;">
+        <div class="row">
+          <div class="col-sm">Sensors</div>
+          <div class="col-sm"></div>
+        </div>
+      </li>
+      <div style="display: flex;">
+        <ul class="list-group list-group-flush" style="padding: 10px;">
+          <li class="list-group-item bottomlist">
+            <div class="row">
+              <div class="col-sm">Battery</div>
+              <div class="col-sm">6 %</div>
+            </div>
+          </li>
+          <li class="list-group-item bottomlist">
+            <div class="row">
+              <div class="col-sm">Ignition</div>
+              <div class="col-sm">Off</div>
+            </div>
+          </li>
+          <li class="list-group-item bottomlist">
+            <div class="row">
+              <div class="col-sm">Satellites</div>
+              <div class="col-sm">9</div>
+            </div>
+          </li>
+          <li class="list-group-item bottomlist">
+            <div class="row">
+              <div class="col-sm">Speed</div>
+              <div class="col-sm">0 kph</div>
+            </div>
+          </li>
+        </ul>
+        <ul class="list-group list-group-flush" style="padding: 10px;">
+          <li class="list-group-item bottomlist">
+            <div class="row">
+              <div class="col-sm">RSSI</div>
+              <div class="col-sm">40 %</div>
+            </div>
+          </li>
+          <li class="list-group-item bottomlist">
+            <div class="row">
+              <div class="col-sm">Blocked</div>
+              <div class="col-sm">Closed</div>
+            </div>
+          </li>
+          <li class="list-group-item bottomlist">
+            <div class="row">
+              <div class="col-sm">Charge</div>
+              <div class="col-sm">On</div>
+            </div>
+          </li>
+          <li class="list-group-item bottomlist">
+            <div class="row">
+              <div class="col-sm">GSM</div>
+              <div class="col-sm">40 %</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="border-right: solid 1px #d9d9d9;">
+      <li class="list-group-item" style="background-color: #f9f9f9; padding: 10px;">
+        <div class="row">
+          <div class="col-sm">Intuite Graph</div>
+          <div class="col-sm"></div>
+        </div>
+      </li>
+      <div style="display: flex;">
+        <div style="display: block;">
+          <canvas baseChart style="height: 120px;" [data]="pieChartData" [chartType]="pieChartType"
+            [colors]="chartColors" [labels]="pieChartLabels" [legend]="false"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
