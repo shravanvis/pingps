@@ -10,3 +10,23 @@ button{
     color: black;
     margin-left: 10px;
 }
+
+.toolbar{
+    width: 100%; height: 40px; display: inline-block; background-color: #26a3c5; color: white; margin-bottom: 10px;
+}
+
+.toolbar i{
+    margin: 10px 5px 0px 0px;
+}
+
+.toolbar p{
+    font-size: 15px; display: inline-block; font-weight: 500;
+}
+
+.toolbar button{
+    border: none; display: inline-block; background-color: transparent; color: white; float: right;
+}
+
+button{
+    outline: none;
+}

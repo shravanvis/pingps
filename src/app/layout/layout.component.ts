@@ -13,7 +13,7 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit() {
     const mapProperties = {
-      center: new google.maps.LatLng(35.2271, -80.8431),
+      center: new google.maps.LatLng(27.2046, 77.4977),
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
  };

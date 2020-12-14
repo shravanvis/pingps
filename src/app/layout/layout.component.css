@@ -1,0 +1,28 @@
+.map-controls{
+    border: none;
+   right: 0%;
+   width: 30px;
+   height: 30px;
+   position: absolute;
+   z-index: 4;
+   background-color: white;
+   text-align: center;
+}
+
+.map-controls:hover{
+    background-color: #2acffd;
+    color: white;
+}
+
+.map-controls:focus{
+    background-color: #1b99bd;
+    color: white;
+}
+
+.map-controls i {
+    font-size: 15px;
+}
+
+button{
+    outline: none;
+}
