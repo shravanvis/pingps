@@ -29,11 +29,11 @@
         </div>
       </div>
   
-      <div *ngIf="objects" style="height: 100%; width: 100%; background-color: white;">
+      <div *ngIf="objects" style="height: 100%; width: 345px;">
   
         <div>
           <div style="text-align: center; display: flex;">
-            <div class="input-group" style="margin: 10px 5px 10px 8px; width: 150px;">
+            <div class="input-group" style="margin: 10px 5px 10px 8px; width: 200px;">
               <div class="input-group-prepend">
                 <span class="input-group-text" style="height: 22px; width: 10px; background-color:  rgb(245, 245, 245);">
                   <i class="fa fa-search" aria-hidden="true" style="margin-left: -5px; font-size: 12px;"></i>
@@ -60,8 +60,8 @@
           </div>
     
           <div class="list-group checkbox-list-group" class="list" style="overflow-y: auto; height: 515px;">
-            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
-              <div class="row" style="padding: 0;">
+            <div *ngFor="let data of allDevices; let i = index" class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+              <div class="row" style="padding: 0;" (click)="selectObject(i)">
                 <div class="col-2" style="padding-top: 10px;">
                   <div style="display: flex;">
                     <input class="checkbox" type="checkbox" style="margin-right: 5px;">
@@ -69,13 +69,19 @@
                   </div>
                 </div>
                 <div class="col-6">
-                  <p style="margin: 0;">BMW M5</p>
-                  <p style="margin: 0; font-size: 10px;">2020-10-13 10:45:53</p>
+                  <p style="margin: 0;">{{data.name}}</p>
+                  <p style="margin: 0; font-size: 10px;">{{data.lastUpdate}}</p>
                 </div>
                 <div class="col">
                   <div style="display: flex; float: right; position: relative; padding-top: 5px;">
                     <p>0kph</p> &nbsp; &nbsp;
                     <p> <img src="../../assets/car-engine.svg" style="width: 20px;" alt=""></p> &nbsp; &nbsp; 
+                    <div *ngIf="data.status == 'online'">
+                      <i class="fa fa-circle" aria-hidden="true" style="color: green; margin-top: 4px;"></i>
+                    </div>
+                    <div *ngIf="data.status == 'offline'">
+                      <i class="fa fa-circle" aria-hidden="true" style="color: grey; margin-top: 4px;"></i>
+                    </div>
                     <p [matMenuTriggerFor]="beforeMenu"> <img src="../../assets/show-more-button-with-three-dots.svg" style="width: 12px;" alt=""></p> &nbsp; &nbsp;
                     <mat-menu #beforeMenu="matMenu">
                       <button mat-menu-item style="padding-left: 5px; height: 30px; border-bottom: solid 1px lightgrey; margin-top: -10px; border-top: solid 5px #26a3c5;">
@@ -123,7 +129,7 @@
                 </div>
               </div>
             </div>
-            <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
+            <!-- <div class="list-group-item" style="padding: 0px 0px 0px 8px; height: 40px; position: relative;">
               <div class="row" style="padding: 0;">
                 <div class="col-2" style="padding-top: 10px;">
                   <div style="display: flex;">
@@ -458,7 +464,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

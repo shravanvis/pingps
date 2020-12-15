@@ -20,6 +20,8 @@ import { ReportsmodalComponent } from './modals/reportsmodal/reportsmodal.compon
 import { ShowpointmodalComponent } from './modals/showpointmodal/showpointmodal.component';
 import { FormsModule } from '@angular/forms';
 import { FirstComponent } from './snackbar/first/first.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -44,9 +46,10 @@ import { FirstComponent } from './snackbar/first/first.component';
     ChartsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [ThemeService],
+  providers: [ThemeService, DataService],
   bootstrap: [AppComponent],
   entryComponents: [DashboardComponent, AddresssearchComponent, ChatmodalComponent, SetupComponent, ReportsmodalComponent, ShowpointmodalComponent, FirstComponent]
 })

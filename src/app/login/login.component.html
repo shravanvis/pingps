@@ -46,7 +46,7 @@
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fa fa-user"></i>
-              <input type="text" placeholder="Username" name="username" [(ngModel)]="username" />
+              <input type="text" placeholder="Email" name="email" [(ngModel)]="email" />
               <p class="error" *ngIf="username_error">Username is required.</p>
             </div>
             <div class="input-field">
@@ -54,7 +54,7 @@
               <input type="password" placeholder="Password" name="password" [(ngModel)]="password" />
               <p class="error" *ngIf="password_error">Password is required.</p>
             </div>
-            <input type="submit" value="Login" (click)="login(message, action)" class="btn solid" />
+            <input type="submit" value="Login" (click)="callTraccarLogin(message, action)" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -77,10 +77,9 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>GPS</h3>
+            <h3>SIPL</h3>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-              ex ratione. Aliquid!
+              Shimnit India Private Limited's GPS
             </p>
           </div>
           <img src="img/log.svg" class="image" alt="" />

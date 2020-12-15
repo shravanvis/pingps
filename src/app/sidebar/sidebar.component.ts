@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { DataService } from '../data.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BaseComp } from '../BaseComp';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,11 +23,15 @@ import { trigger, style, animate, transition } from '@angular/animations';
     )
   ],
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent extends BaseComp implements OnInit {
 
-  constructor() { }
+  constructor(private dataservice: DataService, private _http: HttpClient) {
+    super();
+   }
 
   ngOnInit() {
+    // console.log("user data:-"+this.getItem("login_details"));
+    this.getDevices();
   }
 
   leftside: boolean = true;
@@ -60,4 +67,29 @@ export class SidebarComponent implements OnInit {
     this.events = false;
   }
   
+  allDevices: object
+  getDevices(){
+
+    // var url = "http://15.207.204.95:8082/api/devices?userId=1";
+    var url = "http://15.207.204.95:8082/api/devices?userId="+JSON.parse(this.getItem('login_details')).id;
+
+    var encodedString = btoa("admin:admin");
+    console.log("encodedString:-" + encodedString)
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + encodedString
+      })
+    };
+
+    this._http.get(url, httpOptions).subscribe((data)=> {
+      this.allDevices = data
+      console.log(data);
+    })
+  }
+
+  selectObject(index){
+    console.log(this.allDevices[index])
+  }
 }
