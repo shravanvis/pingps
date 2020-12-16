@@ -32,6 +32,7 @@ export class SidebarComponent extends BaseComp implements OnInit {
   ngOnInit() {
     // console.log("user data:-"+this.getItem("login_details"));
     this.getDevices();
+    this.getEvent();
   }
 
   leftside: boolean = true;
@@ -91,5 +92,26 @@ export class SidebarComponent extends BaseComp implements OnInit {
 
   selectObject(index){
     console.log(this.allDevices[index])
+  }
+
+  allEvents: object;
+  getEvent(){
+
+    var url = "http://15.207.204.95:8082/api/reports/events?deviceId=1&deviceId=2&deviceId=3&deviceId=4&deviceId=5&from=2020-12-16T00:00:00Z&to=2020-12-16T23:59:00Z&type=allEvents"
+
+    var encodedString = btoa("admin:admin");
+    console.log("encodeString:-" + encodedString)
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + encodedString
+      })
+    }
+    
+    this._http.get(url, httpOptions).subscribe((data)=> {
+      this.allEvents = data
+      console.log(data);
+    })
   }
 }

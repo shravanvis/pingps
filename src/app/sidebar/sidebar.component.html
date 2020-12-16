@@ -469,32 +469,33 @@
         </div>
       </div>
       
-      <div *ngIf="events" style="height: 100%; width: 100%; background-color: white;">
-        <div style="text-align: center; display: flex;">
-  
-          <div class="input-group" style="margin: 10px 5px 10px 8px; width: 150px;">
-            <div class="input-group-prepend">
-              <span class="input-group-text" style="height: 22px; width: 10px; background-color:  rgb(245, 245, 245);"><i class="fa fa-search" aria-hidden="true" style="margin-left: -5px; font-size: 12px;"></i></span>
+      <div *ngIf="events" style="height: 100%; width: 345px; background-color: white;">
+          <div style="text-align: center; display: flex;">
+            <div class="input-group" style="margin: 10px 5px 10px 8px; width: 200px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="height: 22px; width: 10px; background-color:  rgb(245, 245, 245);">
+                  <i class="fa fa-search" aria-hidden="true" style="margin-left: -5px; font-size: 12px;"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control search-input" placeholder="Search" style="height: 22px; font-size: 12px;">
             </div>
-            <input type="text" class="form-control search-input" placeholder="Search" style="height: 22px; font-size: 12px;">
-          </div>
-  
-          <button class="button_class">
-            <i class="fa fa-refresh" aria-hidden="true"></i>
-          </button>
-  
-          <button class="button_class">
-            <i class="fa fa-share-alt" aria-hidden="true"></i>
-          </button>
-  
-          <button class="button_class">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-          </button>
-  
-          <button class="button_class">
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-          </button>
-        </div>        
+    
+            <button class="button_class">
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+            </button>
+    
+            <button class="button_class">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </button>
+    
+            <button class="button_class">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+    
+            <button class="button_class">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
+          </div>        
         <div class="table-responsive">
           <table class="table table-hover event-table">
             <thead class="thead-light">
@@ -505,72 +506,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>01:16:36</td>
+              <tr *ngFor="let data of allEvents; let i = index">
+                <td>{{data.serverTime}}</td>
                 <td>Car</td>
-                <td>Zone in (Coventry)</td>
-              </tr>
-              <tr>
-                <td>01:19:43</td>
-                <td>Car</td>
-                <td>Zone in (Coventry)</td>
-              </tr>
-              <tr>
-                <td>01:53:18</td>
-                <td>Car</td>
-                <td>Zone in (Stafford)</td>
-              </tr>
-              <tr>
-                <td>01:57:13</td>
-                <td>Car</td>
-                <td>Zone in (Stafford)</td>
-              </tr>
-              <tr>
-                <td>03:12:24</td>
-                <td>Car</td>
-                <td>Zone in (Preston)</td>
-              </tr>
-              <tr>
-                <td>04:10:58</td>
-                <td>Car</td>
-                <td>Zone in (Preston)</td>
-              </tr>
-              <tr>
-                <td>01:16:36</td>
-                <td>Car</td>
-                <td>Zone in (Coventry)</td>
-              </tr>
-              <tr>
-                <td>01:19:43</td>
-                <td>Car</td>
-                <td>Zone in (Coventry)</td>
-              </tr>
-              <tr>
-                <td>01:53:18</td>
-                <td>Car</td>
-                <td>Zone in (Stafford)</td>
-              </tr>
-              <tr>
-                <td>01:57:13</td>
-                <td>Car</td>
-                <td>Zone in (Stafford)</td>
-              </tr>
-              <tr>
-                <td>03:12:24</td>
-                <td>Car</td>
-                <td>Zone in (Preston)</td>
-              </tr>
-              <tr>
-                <td>04:10:58</td>
-                <td>Car</td>
-                <td>Zone in (Preston)</td>
+                <td>{{data.type}}</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
   
-      <div *ngIf="history" style="height: 100%; width: 100%; background-color: white;">
+      <div *ngIf="history" style="height: 100%; width: 345px; background-color: white;">
         <div class="container" style="height: 500px; margin: 10px 10px 10px 0px;">
           <div class="row">
             <div class="col-3">
